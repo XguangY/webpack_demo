@@ -1,5 +1,7 @@
 # webpack_demo
 
+> 重学webpack
+
 ## demo01
 
 构建最基本的webpack 打包框架

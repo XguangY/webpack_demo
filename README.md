@@ -2,7 +2,7 @@
 
 > 重学webpack
 
-## demo01
+## demo01 起步
 
 构建最基本的webpack 打包框架
 
@@ -17,3 +17,12 @@
 2、可以执行依赖包中的命令，安装完成自动运行。
 3、自动加载node_modules中依赖包，不用指定$PATH。
 4、可以指定node版本、命令的版本，解决了不同项目使用不同版本的命令的问题。
+
+## demo02 管理资源
+
+处理各种
+
++ css-loader style-loader 处理css
++ file-loader 处理图片和字体图标
++ cvs-loader xml-loader 处理xml格式数据
+

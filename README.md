@@ -20,9 +20,47 @@
 
 ## demo02 管理资源
 
-处理各种
+处理各种资源
 
 + css-loader style-loader 处理css
 + file-loader 处理图片和字体图标
 + cvs-loader xml-loader 处理xml格式数据
+
+## demo03 开发 + 模块热替换
+
+#### source map
+ 当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。为了更容易地追踪错误和警告，JavaScript 提供了 source map 功能，将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
+
+#### 热更新
+
+webpack 中有几个不同的选项，可以帮助你在代码发生变化后自动编译代码：
+
++ webpack's Watch Mode
++ webpack-dev-server （常用）
++ webpack-dev-middleware
+
+###### 观察者模式
+
+```
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "watch": "webpack --watch", // new add
+  "build": "webpack"
+},
+```
+> 文档说观察者模式会动态打包，但是需要刷新浏览器才能看到效果，实测chrome不用刷新自动触发
+
+######  webpack-dev-server
+
+webpack-dev-server 为你提供了一个简单的 web 服务器，并且能够实时重新加载(live reloading)
+
+```
+devServer: {
+  // contentBase: "./dist", // 配置项失效
+  static: "./dist",
+  hot: true,
+},
+```
+
+##### webpack-dev-middleware
 

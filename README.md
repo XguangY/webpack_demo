@@ -92,3 +92,12 @@ tree shaking 是一个术语，通常用于描述移除 JavaScript 上下文中�
 
 ##### 入口起点(entry points)
 
+## demo07 懒加载
+
+```
+button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+  var print = module.default;
+
+  print();
+});
+```

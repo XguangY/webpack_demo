@@ -101,3 +101,29 @@ button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(mod
   print();
 });
 ```
+
+## 缓存 - 拆包优化
+
+此指南的重点在于通过必要的配置，以确保 webpack 编译生成的文件能够被客户端缓存，而在文件内容变化后，能够请求到新的文件。
+
+```
+-   entry: './src/index.js',
++   entry: {
++     main: './src/index.js',
++     vendor: [
++       'lodash'
++     ]
++   },
+    plugins: [
+      new CleanWebpackPlugin(['dist']),
+      new HtmlWebpackPlugin({
+        title: 'Caching'
+      }),
++     new webpack.optimize.CommonsChunkPlugin({
++       name: 'vendor'
++     }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest'
+      })
+    ],
+```

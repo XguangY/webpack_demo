@@ -32,7 +32,7 @@
  当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。为了更容易地追踪错误和警告，JavaScript 提供了 source map 功能，将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
  devtool: 'inline-source-map'
 
-#### 热更新
+#### demo04 热更新
 
 webpack 中有几个不同的选项，可以帮助你在代码发生变化后自动编译代码：
 
@@ -73,3 +73,10 @@ tree shaking 是一个术语，通常用于描述移除 JavaScript 上下文中�
 ##### 压缩输出
 
 从 webpack 4 开始，也可以通过 "mode" 配置选项轻松切换到压缩输出，只需设置为 "production"。
+
+## demo05 生产环境构建
+
+利用`webpack-merge`的合并功能拆分配置文件
+
+> 还要注意，任何位于 /src 的本地代码都可以关联到 process.env.NODE_ENV 环境变量
+

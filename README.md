@@ -30,6 +30,7 @@
 
 #### source map
  当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。为了更容易地追踪错误和警告，JavaScript 提供了 source map 功能，将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
+ devtool: 'inline-source-map'
 
 #### 热更新
 
@@ -64,3 +65,11 @@ devServer: {
 
 ##### webpack-dev-middleware
 
+
+## tree shaking
+
+tree shaking 是一个术语，通常用于描述移除 JavaScript 上下文中的未引用代码(dead-code)
+
+##### 压缩输出
+
+从 webpack 4 开始，也可以通过 "mode" 配置选项轻松切换到压缩输出，只需设置为 "production"。
